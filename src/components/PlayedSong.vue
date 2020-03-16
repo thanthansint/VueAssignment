@@ -2,7 +2,7 @@
     <div id="display">        
         <i>{{ title }}</i>
         <p>{{ artist }}</p>
-        <button v-on:click="removeFromPlayList">Remove From Playlist</button>        
+        <button v-on:click="removeFromPlayList" id="button">Remove From Playlist</button>        
     </div>
 </template>
 
@@ -33,5 +33,10 @@ export default {
         padding-top: 35px;
         margin: 10px;
         border: 1px solid grey;
-    }
+}
+#button {
+    color: white;
+    background: purple;
+    padding: 10px;
+}
 </style>

@@ -30,6 +30,11 @@ export default {
         height: 20vh;
         padding-top: 35px;
         margin: 10px;
-        border: 1px solid grey;
+        border: 1px solid grey;        
+    }
+    #button {
+        color: white;
+        background: purple;
+        padding: 10px;
     }
 </style>
