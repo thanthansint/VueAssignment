@@ -25,16 +25,16 @@ export default {
     return {     
       songlist : [
          {
-              title: "AAA",
-              artist: "Than"
+              title: "A Mother (For Your Mind)",
+              artist: "The Herbaliser"
          },
         {
-              title: "BBB",
-              artist: "Sint"
+              title: "A New Day Has Come",
+              artist: "Celine Dion"
           },
           {
-              title: "CCC",
-              artist: "Nyan"
+              title: "Adore You",
+              artist: "Miley Cyrus"
           }
       ],
       playlist: []
