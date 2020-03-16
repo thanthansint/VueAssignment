@@ -1,17 +1,56 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div id="app"> 
+    <div id="col">
+      <p id="textSetting"><strong>Songs List</strong></p>
+      <SongList v-bind:list="songlist" @myRemoveEvent="removeSong"/>    
+    </div>
+    <div id="col">  
+      <p id="textSetting"><strong>Played-Songs List</strong></p> 
+      <PlayList v-bind:list="playlist" @mySubEvent="addSong"/>
+    </div>
+  </div>   
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SongList from './components/SongList.vue'
+import PlayList from './components/PlayList.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {    
+    SongList,
+    PlayList
+  },
+  data: function() {
+    return {     
+      songlist : [
+         {
+              title: "AAA",
+              artist: "Than"
+         },
+        {
+              title: "BBB",
+              artist: "Sint"
+          },
+          {
+              title: "CCC",
+              artist: "Nyan"
+          }
+      ],
+      playlist: []
+    }
+  },
+  methods: {
+    removeSong: function (songTitle, songArtist) {      
+      var index = this.songlist.findIndex(obj => obj.title==songTitle && obj.artist == songArtist);     
+      this.songlist.splice(index, 1);     
+      this.playlist.push({title: songTitle, artist: songArtist});      
+    },
+    addSong: function (songTitle, songArtist) {
+      var index1 = this.playlist.findIndex(obj => obj.title==songTitle && obj.artist == songArtist);     
+      this.playlist.splice(index1, 1);     
+      this.songlist.push({title: songTitle, artist: songArtist});
+    }
   }
 }
 </script>
@@ -24,5 +63,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
 }
+#col {
+  float: left;
+  width: 50%;  
+  }
+#textSetting {
+  text-align: left;
+  margin-left: 3vw;
+  }
 </style>
