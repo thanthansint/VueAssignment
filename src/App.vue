@@ -25,7 +25,7 @@ export default {
     return {     
       songlist : [
          {
-              title: "A Mother (For Your Mind)",
+              title: "A Mother",
               artist: "The Herbaliser"
          },
         {
